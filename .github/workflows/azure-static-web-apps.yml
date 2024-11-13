@@ -20,7 +20,13 @@ jobs:
       - name: Install Dependencies
         run: npm install
         
+      - name: Setup Environment
+        run: |
+          cp .env.production .env
+        
       - name: Build
         run: npm run build
+        env:
+          VITE_API_BASE_URL: https://copaiba-certificado-api.azurewebsites.net/
           
       # ... resto do workflow 

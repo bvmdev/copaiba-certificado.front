@@ -658,7 +658,7 @@ const processAllCertificates = async () => {
   processing.value = true
   processingResults.value = []
 
-  try {
+  try { 
     for (const recipient of recipients.value) {
       try {
         const formData = new FormData()
@@ -676,7 +676,7 @@ const processAllCertificates = async () => {
           textColor: textColor.value.replace('#', '')
         })
 
-        const response = await fetch(`http://localhost:5000/api/Image/process?${params}`, {
+        const response = await fetch(`https://copaiba-certificado-api.azurewebsites.net/api/Image/process?${params}`, {
           method: 'POST',
           body: formData
         })
